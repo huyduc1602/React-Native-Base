@@ -1,6 +1,6 @@
 {
   "name": "RNReduxSagaBaseTS",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -8,9 +8,6 @@
     "lint": "eslint .",
     "start": "react-native start",
     "start reset": "react-native start --reset-cache",
-    "ss": "adb -s R9AMA22WK7J reverse tcp:8081 tcp:8081 && cd android && npm start",
-    "emulator-5554": "adb -s emulator-5554 reverse tcp:8081 tcp:8081 && cd android && npm start",
-    "emulator-5556": "adb -s emulator-5556 reverse tcp:8081 tcp:8081 && cd android && npm start",
     "test": "jest"
   },
   "dependencies": {
