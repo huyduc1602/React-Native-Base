@@ -1,5 +1,5 @@
-import { put, call, takeLatest, delay } from 'redux-saga/effects';
-import { getLogin } from '../../app/repositories/LoginRepository';
+import {put, call, takeLatest, delay} from 'redux-saga/effects';
+import {getLogin} from '../../app/repositories/LoginRepository';
 import * as loginActions from '../../app/actions/loginAction';
 import * as types from '../../app/actions/types';
 import * as RootNavigation from '../../app/navigation/RootNavigation';
@@ -13,13 +13,14 @@ export function* fetchLogin(params) {
   //DUMMY DATA
   const NETWORK_ERROR = 'Network Error';
   console.log(TAG + ' response: ' + JSON.stringify(response));
-  if (response.status == NETWORK_ERROR) {
-    response = {
-      statusCode: 200,
-      loading: false,
-      results: {}
-    };
-    yield delay(2000);
+  if (response.status === NETWORK_ERROR) {
+    // response = {
+    //   statusCode: 200,
+    //   loading: false,
+    //   results: {},
+    // };
+    // yield delay(2000);
+    console.error(TAG + ' error login: ' + JSON.stringify(response));
   }
 
   if (response.statusCode === 200) {
@@ -30,6 +31,4 @@ export function* fetchLogin(params) {
   }
 }
 
-export const loginSagas = [
-  takeLatest(types.LOGIN_REQUEST, fetchLogin),
-];
+export const loginSagas = [takeLatest(types.LOGIN_REQUEST, fetchLogin)];
