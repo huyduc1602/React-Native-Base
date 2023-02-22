@@ -7,15 +7,21 @@
 // import * as Constants from 'app/utils/constants';
 // import UserAgent from 'react-native-user-agent';
 
-import axios, { isCancel, AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
-import { BaseResponse, BaseErrorResponse } from '../../app/api/ResponseTypes';
+import axios, {
+  isCancel,
+  AxiosError,
+  AxiosResponse,
+  AxiosRequestConfig,
+} from 'axios';
+import {BaseResponse, BaseErrorResponse} from '../../app/api/ResponseTypes';
+import VersionNumber from 'react-native-version-number';
+import {Platform} from 'react-native';
 
 const TAG = 'ApiModule';
 const TIME_OUT = 30000;
 const NETWORK_ERROR = 'Network Error';
 
 export default class ApiModule {
-
   constructor(info = {}) {
     // this.url = getConfigs().BASE_URL;
     this.token = 'API_TOKEN...';
@@ -28,6 +34,9 @@ export default class ApiModule {
         'Accept-Language': this.languageCode,
         Authorization: this.token,
         'User-Agent': this.userAgent,
+        version: '1.8',
+        app: 'store',
+        os: Platform.OS,
       },
     });
   }
@@ -65,8 +74,8 @@ export default class ApiModule {
   }
 
   /**
-  * @returns BaseResponse
-  */
+   * @returns BaseResponse
+   */
   handleResponse(response: AxiosResponse<BaseResponse>): BaseResponse {
     if (response.status === 200) {
       return response.data;
