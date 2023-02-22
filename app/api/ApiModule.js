@@ -13,9 +13,9 @@ import axios, {
   AxiosResponse,
   AxiosRequestConfig,
 } from 'axios';
-import {BaseResponse, BaseErrorResponse} from '../../app/api/ResponseTypes';
+import { BaseResponse, BaseErrorResponse } from '../../app/api/ResponseTypes';
 import VersionNumber from 'react-native-version-number';
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 const TAG = 'ApiModule';
 const TIME_OUT = 30000;
@@ -30,7 +30,7 @@ export default class ApiModule {
       baseURL: this.url,
       timeout: TIME_OUT, // not working for Android https://github.com/axios/axios/issues/2073
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
         'Accept-Language': this.languageCode,
         Authorization: this.token,
         'User-Agent': this.userAgent,

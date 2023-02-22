@@ -2,3 +2,7 @@
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_RESPONSE = 'LOGIN_RESPONSE';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
+
+// alert
+export const ALERT_ERROR_REQUEST = 'ALERT_ERROR_REQUEST';
+export const ALERT_INFO_REQUEST = 'ALERT_INFO_REQUEST';

@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import {
   View,
   Text,
@@ -6,14 +6,14 @@ import {
   StyleSheet,
   TextInput,
 } from 'react-native';
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import i18n from '../../app/utils/i18n';
 import * as StringNames from '../../app/assets/locales/StringNames';
 import * as ScreenTypes from '../../app/navigation/ScreenTypes';
 import * as loginAction from '../../app/actions/loginAction';
 import Loading from '../../app/components/Loading';
-import {connect} from 'react-redux';
-import {CustomInput} from '../components/Input/CustomInput';
+import { connect } from 'react-redux';
+import { CustomInput } from '../components/Input/CustomInput';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const TAG = 'LoginScreen';
@@ -27,25 +27,26 @@ function LoginScreen(props) {
   //     password: '',
   //   };
   // }
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('ids00001');
+  const [password, setPassword] = useState('ids00001');
 
-  const {colors} = useTheme();
+  const { colors } = useTheme();
 
   const loginClick = () => {
     console.log(TAG + ' loginClick ');
     // this.props.navigation.navigate(ScreenTypes.Home);
-    props.onLogin(username, password);
+
+    props.onLogin({ username, password });
   };
 
   const renderLoading = () => {
-    const {statusLogin} = props;
+    const { statusLogin } = props;
     return statusLogin.loading === true && <Loading />;
   };
 
   return (
     <>
-      {renderLoading()}
+      {/* {renderLoading()} */}
       <View style={styles.container}>
         <TextInput
           // styles={{borderColor:'black',borderWidth:1}}
@@ -61,7 +62,7 @@ function LoginScreen(props) {
             setPassword(text);
           }}
         />
-        <View style={{marginBottom: 15}}>
+        <View style={{ marginBottom: 15 }}>
           {/* <CustomInput
             icon={
               <FontAwesome name={'user'} size={20} color={colors.textLight} />
@@ -71,7 +72,7 @@ function LoginScreen(props) {
             onChangeText={username => console.log(username)}
           /> */}
         </View>
-        <View style={{marginBottom: 15}}>
+        <View style={{ marginBottom: 15 }}>
           {/* <CustomInput
             type={'password'}
             icon={
