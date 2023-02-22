@@ -10,7 +10,7 @@ export function getLogin(params) {
   //   more: '...',
   // };
   const paramsPost = {
-    email: params.email,
+    username: params.username,
     password: params.password,
     from: 'store',
     registrationId:
