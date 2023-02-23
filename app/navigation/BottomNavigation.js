@@ -1,16 +1,15 @@
-import React from "react";
-import { useTheme } from "@react-navigation/native";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from "../screens/Home";
-import About from "../screens/Settings";
+import React from 'react';
+import {useTheme} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeScreen from '../screens/HomeScreen';
+import SettingScreen from '../screens/SettingScreen';
 
-import CustomNavigation from "./CustomNavigation";
+import CustomNavigation from './CustomNavigation';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {
-
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   const theme = useTheme();
 
@@ -21,21 +20,12 @@ const BottomNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="Home"
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-        />
-        <Tab.Screen
-          name="Settings"
-          component={About}
-        />
+        initialRouteName="Home">
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingScreen} />
       </Tab.Navigator>
     </>
   );
 };
-
-
 
 export default BottomNavigation;

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
-import {FONTS, ICONS, SIZES} from '../../constants/theme';
+import { FONTS, ICONS, SIZES, COLORS } from '../../constants/theme';
 import {SvgXml} from 'react-native-svg';
 
-const CustomInput = props => {
+const InputLogin = props => {
   const {colors} = useTheme();
 
   const [passwordShow, setPasswordShow] = useState(true);
@@ -16,28 +16,17 @@ const CustomInput = props => {
   return (
     <>
       <View style={{position: 'relative', justifyContent: 'center'}}>
-        <View
-          style={{
-            position: 'absolute',
-            left: 20,
-            //top:16,
-          }}>
-          {props.icon && props.icon}
-        </View>
         <TextInput
           secureTextEntry={props.type === 'password' ? passwordShow : false}
           style={[
             {
               ...FONTS.font,
-              fontSize: 16,
+              fontSize: SIZES.fontLg,
               borderWidth: 1,
-              borderColor: colors.borderColor,
+              borderColor: COLORS.borderLogin,
               borderRadius: SIZES.radius,
-              paddingVertical: 12,
-              paddingHorizontal: 15,
-            },
-            props.icon && {
-              paddingLeft: 50,
+              paddingVertical: SIZES.paddingVerticallInput,
+              paddingHorizontal: SIZES.paddingHorizontalInput,
             },
             props.inputLg && {
               paddingVertical: 18,
@@ -54,7 +43,8 @@ const CustomInput = props => {
               borderRadius: 0,
             },
           ]}
-          placeholderTextColor={colors.text}
+          placeholderTextColor={COLORS.white}
+          color={COLORS.white}
           placeholder={props.placeholder}
           onChangeText={props.onChangeText}
           //value={props.value}
@@ -66,7 +56,10 @@ const CustomInput = props => {
             accessibilityHint="Password show and hidden"
             onPress={() => handndleShowPassword()}
             style={styles.eyeIcon}>
-            <SvgXml xml={passwordShow ? ICONS.eyeClose : ICONS.eyeOpen} />
+            <SvgXml
+              xml={passwordShow ? ICONS.eyeClose : ICONS.eyeOpen}
+              fill={colors.white}
+            />
           </TouchableOpacity>
         )}
       </View>
@@ -87,4 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomInput;
+export default InputLogin;
