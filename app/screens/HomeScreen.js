@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {SafeAreaView, ScrollView, Text, View, StyleSheet} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {GlobalStyleSheet} from '../constants/StyleSheet';
-import HeaderStyle2 from '../components/Headers/HeaderStyle2';
+import HeaderStyle from '../components/Headers/HeaderStyle';
 import {DrawerLayout} from 'react-native-gesture-handler';
 import DrawerMenu from '../layout/DrawerMenu';
 
@@ -21,7 +21,7 @@ function HomeScreen() {
         drawerBackgroundColor="#ddd"
         renderNavigationView={() => <DrawerMenu drawer={drawerRef} />}>
         <SafeAreaView style={{flex: 1, backgroundColor: colors.background2}}>
-          <HeaderStyle2 drawer={drawerRef} title="Home" />
+          <HeaderStyle drawer={drawerRef} title="Home" />
 
           <ScrollView>
             <View style={[GlobalStyleSheet.container, {paddingBottom: 5}]}>
