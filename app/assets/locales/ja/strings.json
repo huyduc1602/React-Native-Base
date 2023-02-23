@@ -1,5 +1,11 @@
 {
-   // TITLE
-  "Login":"ログイン",
-  "Sign up":"アカウントを作成"
+  // TITLE
+  "SHOP": "SHOP",
+  "Login": "ログイン",
+  "Sign up": "アカウントを作成",
+  // BUTTON
+  "Register": "初めての方はこちら",
+  // PLACEHOLDER
+  "PlacehoderUserName": "ログインID",
+  "PlacehoderPassword": "パスワード",
 }

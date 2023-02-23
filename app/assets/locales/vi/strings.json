@@ -1,5 +1,11 @@
 {
    // TITLE
+  "SHOP": "SHOP",
   "Login":"Đăng nhập",
-  "Sign up":"Đăng ký"
+  "Sign up":"Đăng ký",
+  // BUTTON
+  "Register":"Đăng ký",
+  // PLACEHOLDER
+  "PlacehoderUserName": "Tài khoản",
+  "PlacehoderPassword": "Mật khẩu",
 }

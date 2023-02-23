@@ -1,5 +1,11 @@
 {
   // TITLE
-  "Login":"Login",
-  "Sign up":"Sign up"
+  "SHOP": "SHOP",
+  "Login": "Login",
+  "Sign up": "Sign up",
+  // BUTTON
+  "Register": "Register",
+  // PLACEHOLDER
+  "PlacehoderUserName": "Username",
+  "PlacehoderPassword": "Password",
 }

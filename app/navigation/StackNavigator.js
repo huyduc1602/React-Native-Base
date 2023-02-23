@@ -1,17 +1,19 @@
-import React from "react";
-import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
+import React from 'react';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 import * as ScreenTypes from '../../app/navigation/ScreenTypes';
 import i18n from '../../app/utils/i18n';
 import * as StringNames from '../../app/assets/locales/StringNames';
-import DrawerNavigation from "./DrawerNavigation";
-import Home from "../screens/Home";
-import About from "../screens/Settings";
-import LoginScreen from "../screens/Login";
+import DrawerNavigation from './DrawerNavigation';
+import HomeScreen from '../screens/HomeScreen';
+import SettingScreen from '../screens/SettingScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 const StackComponent = createStackNavigator();
 
-const StackNavigator = (props) => {
-
+const StackNavigator = props => {
   return (
     <>
       <StackComponent.Navigator
@@ -19,16 +21,15 @@ const StackNavigator = (props) => {
         detachInactiveScreens={true}
         screenOptions={{
           headerShown: false,
-          cardStyle: { backgroundColor: "transparent" },
+          cardStyle: {backgroundColor: 'transparent'},
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          headerTitleAlign: 'center'
-        }}
-      >
+          headerTitleAlign: 'center',
+        }}>
         <StackComponent.Screen
           name={ScreenTypes.Login}
           component={LoginScreen}
           options={{
-            headerShown: true,
+            headerShown: false,
             title: i18n.t(StringNames.tLogin),
           }}
         />
@@ -39,9 +40,8 @@ const StackNavigator = (props) => {
             title: i18n.t(StringNames.tHome),
           }}
         />
-        {/* <StackComponent.Screen name={"Home"} component={Home} /> */}
-        {/* <StackComponent.Screen name={"About"} component={About} /> */}
-
+        {/* <StackComponent.Screen name={"Home"} component={HomeScreen} /> */}
+        {/* <StackComponent.Screen name={"SettingScreen"} component={SettingScreen} /> */}
       </StackComponent.Navigator>
     </>
   );
