@@ -21,6 +21,6 @@
 * Apply flow with Redux-Saga pattern.
 * Apply i18next, bottom-tabs
 
-## Author - Created by LMQ
-* IDS - quylm@vn.ids.jp
+## Author - Created by HHD
+* HOANG HUY DUC - hoanghuyduc.com
 * Thank you!
